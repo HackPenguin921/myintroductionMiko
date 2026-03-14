@@ -8,6 +8,9 @@
 </head>
 
 <body>
+<div id="splash">
+<img src="images/homepic.png" alt="home">
+</div>
 
 <header>
 <h1>MikoAqu842の自己紹介</h1>
@@ -105,5 +108,39 @@ SNSネーム<br>
 <p>作成者：MikoAqu842</p>
 </footer>
 
+<script>
+
+function createSakura(){
+
+const sakura=document.createElement("div");
+sakura.classList.add("sakura");
+
+sakura.style.left=Math.random()*100+"vw";
+sakura.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(sakura);
+
+setTimeout(()=>{
+sakura.remove();
+},10000);
+
+}
+
+setInterval(createSakura,300);
+
+</script>
+<script>
+
+window.onload=function(){
+
+setTimeout(function(){
+
+document.getElementById("splash").classList.add("fadeout");
+
+},2000); // 表示時間（ミリ秒）
+
+}
+
+</script>
 </body>
 </html>
